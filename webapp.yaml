@@ -1,20 +1,20 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "k8sxiangsc-8282"
+  name: k8sxiangsc-8282
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: "k8sxiangsc-8282"
+      app: k8sxiangsc-8282
   template:
     metadata:
       labels:
-        app: "k8sxiangsc-8282"
+        app: k8sxiangsc-8282
     spec:
       containers:
-        - name: "k8sxiangsc-8282"
-          image: "nginx"
+        - name: k8sxiangsc-8282
+          image: nginx
           ports:
           - containerPort: 80
 ---
@@ -28,6 +28,6 @@ spec:
     app: k8sxiangsc-8282
   ports:
     protocol: TCP
-    port: 8188
+    port: 8080
     targetPort: 80
-    nodePort: 32223
+    nodePort: 30080
