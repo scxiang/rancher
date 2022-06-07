@@ -27,7 +27,6 @@ spec:
   selector:
     app: k8sxiangsc-8282
   ports:
-    protocol: TCP
-    port: 8080
-    targetPort: 80
-    nodePort: 30080
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
