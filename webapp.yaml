@@ -17,3 +17,17 @@ spec:
           image: "nginx"
           ports:
           - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rancher-webapp-svc
+spec:
+  type: NodePort
+  selector:
+    app: k8sxiangsc-8282
+  ports:
+    protocol: TCP
+    port: 8188
+    targetPort: 80
+    nodePort: 32223
