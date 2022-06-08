@@ -1,29 +1,29 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "web-app"
+  name: web-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: "wen-app"
+      app: wen-app
   template:
     metadata:
       labels:
-        app: "web-app"
+        app: web-app
     spec:
       containers:
-        - name: "web-app"
-          image: "nginx"
+        - name: web-app
+          image: nginx
           ports:
           - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-    name: "web-app"
+    name: web-app
     labels:
-        app: "web-app"
+        app: web-app
 spec:
     type: NodePort
     ports:
@@ -33,4 +33,4 @@ spec:
       nodePort: 30080
       name: http
     selector:
-        app: "web-app"
+        app: web-app
